@@ -1,0 +1,19 @@
+{
+  "name": "github-release",
+  "version": "1.0.0",
+  "description": "",
+  "main": "release.js",
+  "dependencies": {
+    "@octokit/rest": "^15.9.5",
+    "async-retry": "^1.2.1",
+    "globby": "^8.0.1",
+    "lodash": "^4.17.10",
+    "mime-types": "^2.1.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
