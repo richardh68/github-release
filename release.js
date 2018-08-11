@@ -174,7 +174,7 @@ const uploadAssets = ({ release, repo, github }) => {
 };
 
 var repository ={ owner:process.env.GITHUBR_OWNER, project:process.env.GITHUBR_REPO };
-var github={ preRelease: false, draft:false, token:process.env.GITHUB_TOKEN, host:'github.com',assets:'assets/*zip' };
+var github={ preRelease: false, draft:false, token:process.env.GITHUB_TOKEN, host:'github.com',assets:'assets/**/*' };
 
 release({version:process.env.GITHUBR_VERSION, tagName:process.env.GITHUBR_VERSION,repo:repository ,changelog:'', github:github}).then((releaseObject)=>{
     console.log(releaseObject);

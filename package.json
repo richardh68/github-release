@@ -6,7 +6,7 @@
   "dependencies": {
     "@octokit/rest": "^15.9.5",
     "async-retry": "^1.2.1",
-    "globby": "^7.0.1",
+    "globby": "^8.0.1",
     "lodash": "^4.17.10",
     "mime-types": "^2.1.19"
   },
