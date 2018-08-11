@@ -177,7 +177,12 @@ var github={ preRelease: false, draft:false, token:process.env.GITHUB_TOKEN, hos
 
 release({version:process.env.GITHUBR_VERSION, tagName:process.env.GITHUBR_VERSION,repo:repository ,changelog:'', github:github}).then((releaseObject)=>{
     console.log(releaseObject);
-    return uploadAssets({release:releaseObject,repo:repository , github:github}).catch((err)=>{console.log(err); process.exit(1);});
+    return uploadAssets({release:releaseObject,repo:repository , github:github}).then((artifactObject) => {
+        console.log(artifactObject);
+    }).catch((err)=>{
+        console.log(err);
+        process.exit(1);
+    });
 
 }).catch((err)=>{
     console.log(err);
