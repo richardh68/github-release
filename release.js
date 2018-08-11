@@ -167,13 +167,14 @@ const uploadAssets = ({ release, repo, github }) => {
 
     return globby(assets).then(files => {
         if (!files.length) {
-    }
+        console.log("files not found with "+assets );
+        }
     return Promise.all(files.map(filePath => uploadAsset({ release, repo, filePath, github })));
 });
 };
 
 var repository ={ owner:process.env.GITHUBR_OWNER, project:process.env.GITHUBR_REPO };
-var github={ preRelease: false, draft:false, token:process.env.GITHUB_TOKEN, host:'github.com',assets:'assets/*' };
+var github={ preRelease: false, draft:false, token:process.env.GITHUB_TOKEN, host:'github.com',assets:'assets/*zip' };
 
 release({version:process.env.GITHUBR_VERSION, tagName:process.env.GITHUBR_VERSION,repo:repository ,changelog:'', github:github}).then((releaseObject)=>{
     console.log(releaseObject);
